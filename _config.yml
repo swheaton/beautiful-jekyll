@@ -31,6 +31,9 @@ navbar-links:
 # Remove this parameter if you don't want an image in the navbar
 avatar: "/img/headshot-avatar.jpg"
 
+# Favicon
+favicon: "/favicon.ico"
+
 # If you want to have an image logo in the top-left corner instead of the title text,
 # then specify the following parameter
 # title-img: /path/to/image
@@ -120,9 +123,6 @@ google_analytics: "UA-158809446-1"
 
 # Fill in your Disqus shortname (NOT the userid) if you want to support Disqus comments
 # disqus: ""
-
-# If you want to use JustComments fill with the API Key
-#just-comments: "ABCD-EFGH-IJKL"
 
 # To use Facebook Comments, fill in a Facebook App ID
 # fb_comment_id: ""
