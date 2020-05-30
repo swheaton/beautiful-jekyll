@@ -10,3 +10,6 @@ ehthumbs.db
 
 *.swp
 *.swo
+Gemfile.lock
+
+beautiful-jekyll-theme-*.gem
