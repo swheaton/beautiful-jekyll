@@ -141,7 +141,7 @@ google_analytics: "UA-158809446-1"
 # See more details about the parameters below at https://utteranc.es/
 utterances:
   repository: swheaton/swheaton.github.io # GitHub username/repository eg. "daattali/beautiful-jekyll"
-  issue-term: tpath   # Mapping between blog posts and GitHub issues
+  issue-term: path   # Mapping between blog posts and GitHub issues
   theme: github-light # Utterances theme
   label: blog-comments # Label that will be assigned to GitHub Issues created by Utterances
 
