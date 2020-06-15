@@ -65,7 +65,7 @@ hr.small {
 }
 
 /* fix in-page anchors to not be behind fixed header */
-:target:before { 
+:target:before {
   content: "";
   display: block;
   height: 3.125rem; /* navbar height */
@@ -716,7 +716,7 @@ footer .footer-custom-content {
     display: block;
   }
 }
-.reader-time .middot { 
+.reader-time .middot {
   margin: 0 0.625rem;
 }
 
@@ -914,4 +914,26 @@ pre {
   color: #808080;
   font-style: italic;
   font-size: 1rem;
+}
+
+/* My custom adds */
+.disclaimer {
+	font-style: italic;
+	font-size: 0.9rem;
+}
+
+.footnotes {
+  font-size: 0.9rem;
+}
+
+.footnotes p {
+  margin: 10px;
+}
+
+a.footnote:before {
+ content: "[";
+}
+
+a.footnote:after {
+    content: "]";
 }

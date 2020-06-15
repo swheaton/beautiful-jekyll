@@ -207,4 +207,6 @@ In this example, **Loan1-maxDown** provides the best NPV at year 10 due to a muc
 	- Default agent fee of 6% (buyer and seller 3% each), paid at the time of sale. It's a scam for sure, but unless you go rogue, you're stuck with it.
 
 ------------------
-_Disclaimer: I am not a lawyer, financial advisor, or mortgage expert, just a lowly software developer who learned some things through the home-buying process. Use this tool at your own risk._
+
+{:.disclaimer}
+Disclaimer: I am not a lawyer, financial advisor, or mortgage expert, just a lowly software developer who learned some things through the home-buying process. Use this tool at your own risk.
