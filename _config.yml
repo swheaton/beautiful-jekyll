@@ -1,7 +1,7 @@
 # --- Basic options --- #
 
 # Name of website
-title: Stuart Wheaton
+title: SWon Software
 
 # Short description of your site
 description: Thoughts from the Cloud
@@ -16,12 +16,14 @@ description: Thoughts from the Cloud
 # --- List of links in the navigation bar --- #
 
 navbar-links:
-  About Me: "about"
+  About:
+      - Me: "about/me"
+      - Blog: "about/swon-software"
   Blog: "blog"
   Publications: "pub"
-  Resources:
-    - Beautiful Jekyll: "http://deanattali.com/beautiful-jekyll/"
-    - Learn markdown: "http://www.markdowntutorial.com/"
+  #Resources:
+  #  - Beautiful Jekyll: "http://deanattali.com/beautiful-jekyll/"
+  #  - Learn markdown: "http://www.markdowntutorial.com/"
 
 # Image to show in the navigation bar - works best with a square image
 # Remove this parameter if you don't want an image in the navbar
