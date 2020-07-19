@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Efficient Time Interval Search
-subtitle: An Application in Database Directory Splicing
+subtitle: And Its Application in Database Directory Splicing
 tags: [databases, data management, efficiency]
 image: /assets/img/interp_search/stabbing_problem.png
 ext-js: https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML
@@ -66,7 +66,7 @@ $$\begin{eqnarray}
 
 
 ### Python Implementation
-Below is some Python code for the intervalInterpolationSearch function described above. End times of buckets are exclusive so that a time will overlap only one bucket. Since the boundary conditions are checked up front in the function, and there are no gaps in time within the bucket structure, the function is guaranteed to find the one and only overlapping bucket for the given time.
+Below is some Python code for the `intervalInterpolationSearch` function described above. End times of buckets are exclusive so that a time will overlap only one bucket. Since the boundary conditions are checked up front in the function, and there are no gaps in time within the bucket structure, the function is guaranteed to find the one and only overlapping bucket for the given time.
 
 ``` python
 def intervalInterpolationSearch(Time[] starts, Time search):
