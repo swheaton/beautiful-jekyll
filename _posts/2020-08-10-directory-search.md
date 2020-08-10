@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Efficient Time Interval Search
+title: Efficient Time Interval Stabbing
 subtitle: And Its Application in Database Directory Splicing
-tags: [databases, data management, efficiency]
+tags: [databases, data management, efficiency, algorithms]
 image: /assets/img/interp_search/stabbing_problem.png
 ext-js: https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML
 ---
@@ -28,7 +28,8 @@ That leads us to the main point, and no it's not in regards to a rampant serial 
 ![Example Database Set Layout Over Time](/assets/img/interp_search/ExampleDBs.png){: .center-block :}
 
 ## Storage
-The figure below shows the example database layout that has now been modeled in a storage structure. Each unique endpoint (start or end) of a database marks a new bucket in the storage array, for a total of `O(2n)` where `n` is the number of databases. Each bucket then holds pointers to all databases overlapping its time boundaries. This means that a database can exist within 1 or more buckets, and each bucket can contain 0 or more databases. A given time _t_ overlaps the bucket at position `p` if `t >= times[p]` and `t < times[p+1]`. End times are exclusive, so that any time overlaps _one and only one_ time bucket. The end time of the last bucket is defined as positive infinity, so that the active database is within the most recent bucket. In the figure, the dotted gray lines indicate how endpoints contribute to defining the buckets in the storage. The red line is again the stabbing point, and so we can see in the matching bucket the resulting overlap database set: A2, B2, and C1.
+{:.storage}
+The figure below shows the example database layout that has now been modeled in a storage structure. Each unique endpoint (start or end) of a database marks a new bucket in the storage array, for a total of `O(2n)` where `n` is the number of databases. Each bucket then holds pointers to all databases overlapping its time boundaries. This means that a database can exist within 1 or more buckets, and each bucket can contain 0 or more databases. A given time _t_ overlaps the bucket at position `p` if `t >= times[p]` and `t < times[p+1]`. End times are exclusive, so that any time overlaps _one and only one_ time bucket. The end time of the last bucket is defined as positive infinity, so that the active database is within the most recent bucket. In the figure, the dotted gray lines indicate how endpoints contribute to defining the buckets in the storage. The red line is again the stabbing point, and so we can see in the matching bucket at the bottom the resulting set of overlapping databases: A2, B2, and C1.
 
 ![Storage Structure for Example Database Set](/assets/img/interp_search/DBStorage.png){: .center-block :}
 
@@ -39,7 +40,7 @@ An alternative approach would be to discretize time into small chunks and then u
 Let's get to stabbing! What's the best way to solve this problem given the requirements and constraints?
 
 ### The Losers
-Ideally the query would be constant-time, but this is difficult given that time is a continuous variable. As discussed above, discretizing time into smaller chunks to make it **hash-able** has multiple disadvantages that make that solution unappealing.  
+Ideally the query would be constant-time, but this is difficult given that time is a continuous variable. As discussed [above](#storage), discretizing time into smaller chunks to make it **hash-able** is appealing given its ability for constant-time lookup, but has multiple disadvantages that make that solution less than ideal.  
 
 Given the relatively low number of databases in the typical case, a simple **linear search** algorithm could be considered, but it’s important to lower the query latency as much as possible and so this is also undesirable.  
 
@@ -51,7 +52,9 @@ Another alternative which is commonly used for data indexing in databases is a *
 Ba dum tss. Using the data structure above, finding all databases overlapping a particular time can be accomplished with an interval-based **binary search**. In this modified form of the search algorithm, query times are checked against the bounds of the candidate time range, then the candidate interval is halved to the left or right based on the comparison. Since intervals cannot overlap and in fact are completely contiguous, the algorithm is guaranteed to return one and only one time-interval bucket. This will lead to a time complexity of `O(lg n)` [^SedgewickAlgorithms], which is no better than the binary tree traversal.
 
 ### Optimization: Time Interpolation Search
-However, this can be improved with the knowledge that time is always linearly increasing and new databases are created at fairly regular intervals, and therefore the distribution of the bucket endpoints will very likely be roughly uniform. Instead of choosing a candidate bucket in the exact middle of the remaining interval, a better estimate can be made by choosing the bucket that is proportionally located where the target time falls within the range. As an analogy, this approach is akin to opening a dictionary towards the back when looking for a word starting with ‘w’ instead of in the middle, because it’s expected that words will be roughly evenly distributed throughout (even though this is obviously not strictly true) and ‘w’ is near the end of the alphabet range.
+However, this can be improved with the knowledge that time is always linearly increasing and new databases are created at fairly regular intervals, and therefore the distribution of the bucket endpoints will very likely be roughly uniform. Instead of choosing a candidate bucket in the exact middle of the remaining interval, a better estimate can be made by choosing the bucket that is proportionally located where the target time falls within the range. 
+
+As an analogy, this approach is akin to opening a dictionary towards the back when looking for a word starting with ‘w’ instead of in the middle, because it’s expected that words will be roughly evenly distributed throughout (even though this is obviously not strictly true) and ‘w’ is near the end of the alphabet range.
 
 ![Graphic of Binary vs. Interpolation Analogy Searching in Dictionary](/assets/img/interp_search/interp_graphic.png){: .center-block :}
 
