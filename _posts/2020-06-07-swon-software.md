@@ -2,7 +2,7 @@
 layout: post
 title: SW on Software
 cover-img: assets/img/blogo.png
-image: assets/img/blogo_name.png
+thumbnail-img: assets/img/blogo_name.png
 suppress-header: true
 tags: [blog]
 ---

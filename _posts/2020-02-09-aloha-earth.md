@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Aloha Earth
-image: assets/img/hello_world.jpeg
+thumbnail-img: assets/img/hello_world.jpeg
 tags: [blog]
 ---
 ## New Digs
