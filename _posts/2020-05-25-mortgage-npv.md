@@ -2,7 +2,7 @@
 layout: post
 title: How a Nerd Buys a House
 subtitle: A Mortgage Net Present Value Calculator
-image: assets/img/money-house.jpg
+thumbnail-img: assets/img/money-house.jpg
 gh-repo: swheaton/mortgage-present-value-calc
 gh-badge: [star, fork, follow]
 tags: [python, personal project]

@@ -3,7 +3,7 @@ layout: post
 title: Efficient Time Interval Stabbing
 subtitle: And Its Application in Database Directory Splicing
 tags: [databases, data management, efficiency, algorithms]
-image: /assets/img/interp_search/stabbing_problem.png
+thumbnail-img: /assets/img/interp_search/stabbing_problem.png
 ext-js: https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML
 ---
 

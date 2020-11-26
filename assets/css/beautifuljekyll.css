@@ -498,6 +498,7 @@ footer .footer-custom-content {
   filter: grayscale(0%);
 }
 .post-preview .post-image img {
+  border-radius: 3rem;
   max-height: 100%;
   max-width: 100%;
 }

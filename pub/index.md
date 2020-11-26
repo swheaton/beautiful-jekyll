@@ -4,7 +4,7 @@ title: Publications
 ---
 {:.police}
 [A Security Analysis of Police Computer Systems](PoliceSecurityPaper.pdf)  
-VanderSloot, Benjamin, **Stuart Wheaton**, and J. Alex Halderman.  _In Proceedings of the IEEE Annual Conference on Privacy, Security, and Trust_ *(PST '17)*, December 2017.
+Benjamin VanderSloot, **Stuart Wheaton**, and J. Alex Halderman. _In Proceedings of the IEEE 14th Annual Conference on Privacy, Security and Trust (PST)_, Auckland, 2016, pp. 714-721, doi: [10.1109/PST.2016.7907023](https://doi.org/10.1109/pst.2016.7907023).
 
 --------
 Erdős number: 4  
