@@ -104,7 +104,7 @@ feed_show_excerpt: true
 feed_show_tags: true
 
 # The keywords to associate with your website, for SEO purposes
-#keywords: "my,list,of,keywords"
+keywords: "technology,programming,coding,c++"
 
 # --- Colours / background image --- #
 
